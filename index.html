@@ -10,43 +10,36 @@
           integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
 </head>
 <body>
-  <!-- Nav tabs -->
-  <ul class="nav nav-tabs|pills" id="navId">
-      <li class="nav-item">
-          <a href="#tab1Id" class="nav-link active">Active</a>
-      </li>
-      <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Dropdown</a>
-          <div class="dropdown-menu">
-              <a class="dropdown-item" href="#tab2Id">Action</a>
-              <a class="dropdown-item" href="#tab3Id">Another action</a>
-              <div class="dropdown-divider"></div>
-              <a class="dropdown-item" href="#tab4Id">Action</a>
-          </div>
-      </li>
-      <li class="nav-item">
-          <a href="#tab5Id" class="nav-link">Another link</a>
-      </li>
-      <li class="nav-item">
-          <a href="#" class="nav-link disabled">Disabled</a>
-      </li>
-  </ul>
-  
-  <!-- Tab panes -->
-  <div class="tab-content">
-      <div class="tab-pane fade in active" id="tab1Id" role="tabpanel"></div>
-      <div class="tab-pane fade" id="tab2Id" role="tabpanel"></div>
-      <div class="tab-pane fade" id="tab3Id" role="tabpanel"></div>
-      <div class="tab-pane fade" id="tab4Id" role="tabpanel"></div>
-      <div class="tab-pane fade" id="tab5Id" role="tabpanel"></div>
-  </div>
-  
-  <script>
-      $('#navId a').click(e => {
-          e.preventDefault();
-          $(this).tab('show');
-      });
-  </script>
+  <div class="container-fluid">
+<nav class="navbar navbar-light bg-faded">
+    <button class="navbar-toggler hidden-lg-up" type="button" data-toggle="collapse"
+            data-target="#collapsibleNavId" aria-controls="collapsibleNavId"
+            aria-expanded="false" aria-label="Toggle navigation"></button>
+    <div class="collapse navbar-toggleable-md" id="collapsibleNavId">
+        <a class="navbar-brand" href="#">My App/Logo with Text</a>
+        <ul class="nav navbar-nav">
+            <li class="nav-item active">
+                <a class="nav-link" href="#">Nav 1 <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Nav 2</a>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="dropdownId"
+                   data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Nav 3 dropdown</a>
+                <div class="dropdown-menu" aria-labelledby="dropdownId">
+                    <a class="dropdown-item" href="#">Action 1</a>
+                    <a class="dropdown-item" href="#">Action 2</a>
+                </div>
+            </li>
+        </ul>
+        <form class="form-inline float-xs-right">
+            <input class="form-control" type="text" placeholder="Search">
+            <button class="btn btn-outline-success" type="submit">Search</button>
+        </form>
+    </div>
+</nav>
+</div>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js"
