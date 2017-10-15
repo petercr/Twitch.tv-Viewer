@@ -37,12 +37,13 @@
     <div class="row">
             <div class="col-sm-6">
               <div class="card mt-4">
-                <div class="card-body">
-                  <h4 class="card-title">Free Code Camp</h4>
-                  <p class="card-text">Are they online?</p>
-                  <p class="card-text">Last online?</p>
-                  <a href="#" class="btn btn-success" id="FCClink">Open Channel</a>
-                </div>
+                <img class="card-img-top" id="FCClogo" src="#" alt="Free Code Camp Logo">
+                  <div class="card-body">
+                    <h4 class="card-title">Free Code Camp</h4>
+                    <p class="card-text">Are they online?</p>
+                    <p class="card-text">Last online?</p>
+                    <a href="#" class="btn btn-success" id="FCClink">Open Channel</a>
+                  </div>
               </div>
             </div>
             <div class="col-sm-6">
@@ -71,7 +72,9 @@
   console.log(data);
   console.log(data.logo);
   $("#FCClink").attr("href" , data.url);
+  $("FCClogo").attr("src", data.logo);
 }); // end of .getJSON() function
+    
 }); // end of .ready() function
     </script>
 </body>
