@@ -5,3 +5,11 @@ i{
 i:hover{
     color: black;
 }
+
+.card-img-top{
+  height: 10%;
+  width:  auto;
+  z-index: 3;
+  position: fixed;
+
+}
