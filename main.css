@@ -13,3 +13,10 @@ i:hover{
   position: fixed;
 
 }
+
+#FCClogo{
+    align-content: flex-end;
+    align-self: flex-end;
+    
+
+}
