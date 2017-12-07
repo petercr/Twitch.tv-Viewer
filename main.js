@@ -1,6 +1,12 @@
 var FCC_Stream, Noobs2_Stream;
 
-$(document).ready(function(){
+function ready(fn) {
+  if (document.attachEvent ? document.readyState === "complete" : document.readyState !== "loading"){
+    fn();
+  } else {
+    document.addEventListener('DOMContentLoaded', fn);
+  }
+
 
  $.getJSON('https://wind-bow.gomix.me/twitch-api/channels/freecodecamp?callback=?', function(data) {
 FCC_Stream = data;
@@ -12,4 +18,4 @@ console.log(logo);
 console.dir(FCC_Stream);
 }); // end of .getJSON() function
 
-}); // end of .ready() function
+}
