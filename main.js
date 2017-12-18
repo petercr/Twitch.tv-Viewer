@@ -13,4 +13,4 @@ var FCC_Stream, Noobs2_Stream;
         console.dir(FCC_Stream);
     }); // end of .getJSON() function
 
-});
+})();
