@@ -1,22 +1,20 @@
-i{
-    color:white;
+i {
+    color: white;
 }
 
-i:hover{
+i:hover {
     color: black;
 }
 
-.card-img-top{
-  height: 10%;
-  width:  auto;
-  z-index: 3;
-  position: fixed;
-
+.card-img-top {
+    height: 10%;
+    width: auto;
+    z-index: 3;
+    position: fixed;
 }
 
-#FCClogo{
+#FCClogo {
     align-content: flex-end;
     align-self: flex-end;
-    
-
+    opacity: .5;
 }
