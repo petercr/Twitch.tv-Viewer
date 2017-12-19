@@ -1,11 +1,11 @@
 var FCC_Stream, Noobs2_Stream;
 
 (function() {
+    let mainURL = "https://wind-bow.gomix.me/twitch-api/channels/freecodecamp?callback=?";
 
-
-    $.getJSON("https://wind-bow.gomix.me/twitch-api/channels/freecodecamp?callback=?", function(data) {
+    $.getJSON(mainURL, function(data) {
         FCC_Stream = data;
-        var logo = data.logo;
+        var logo = data.profile_banner;
 
         $("#FCClink").attr("href", data.url);
         $("#FCClogo").attr("src", logo);
