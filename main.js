@@ -13,4 +13,11 @@ var FCC_Stream, Noobs2_Stream;
         console.dir(FCC_Stream);
     }); // end of .getJSON() function
 
+    fetch(mainURL).then(function(response) {
+            return response.json;
+        })
+        .then(function(json) {
+            console.dir(json);
+        })
+
 })();
