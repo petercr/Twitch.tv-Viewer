@@ -1,7 +1,7 @@
 var FCC_Stream, Noobs2_Stream;
 
 ( function() {
-	let mainURL = "https://wind-bow.gomix.me/twitch-api/channels/freecodecamp?callback=?";
+	let mainURL = "https://wind-bow.gomix.me/twitch-api/channels/freecodecamp";
 
 	// $.getJSON( mainURL, function( data ) {
 	// 	FCC_Stream = data;
@@ -14,10 +14,10 @@ var FCC_Stream, Noobs2_Stream;
 	// } ); // end of .getJSON() function
 
 	fetch( mainURL, { method: "GET", mode: "no-cors"} ).then( function( response ) {
-		return response;
+		return response.json;
 	} )
-		.then( function( response ) {
-			console.dir( response );
+		.then( function( data ) {
+			console.dir( data );
 		} );
 
 } )( );
