@@ -1,11 +1,13 @@
-var FCC_Stream, Noobs2_Stream;
+let FCC_Stream, Noobs2_Stream;
+
+const CHANNELS = ["freecodecamp", "aws", "kyleshevlin", "barbarousking"];
 
 (function() {
-    let mainURL = "https://wind-bow.glitch.me/twitch-api/channels/freecodecamp"
+    let mainURL = "https://wind-bow.glitch.me/twitch-api/channels/";
 
     $.getJSON(mainURL, function(data) {
         FCC_Stream = data;
-        var logo = data.profile_banner;
+        let logo = data.profile_banner;
 
         $("#FCClink").attr("href", data.url);
         $("#FCClogo").attr("src", logo);
