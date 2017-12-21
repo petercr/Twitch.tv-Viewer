@@ -18,3 +18,7 @@ i:hover {
     align-self: flex-end;
     opacity: .5;
 }
+
+.card-body {
+    color: #FFFFFF;
+}
