@@ -11,7 +11,8 @@ const CHANNELS = ["freecodecamp", "aws", "kyleshevlin", "barbarousking"];
 
         $("#FCClink").attr("href", data.url);
         // $("#FCClogo").attr("src", logo);
-        $(".card-body").css("background-image", "url(" + logo + ")");
+        // $(".card-body").css("background-image", "url(" + logo + ")");
+        document.getElementById("card1").style.backgroundImage = `url( ${logo})`;
         console.log(logo);
         console.dir(FCC_Stream);
     }); // end of .getJSON() function
