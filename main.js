@@ -9,9 +9,9 @@ const CHANNELS = ["freecodecamp", "aws", "kyleshevlin", "barbarousking"];
         FCC_Stream = data;
         let logo = data.profile_banner;
 
-        $("#FCClink").attr("href", data.url);
-        // $("#FCClogo").attr("src", logo);
-        // $(".card-body").css("background-image", "url(" + logo + ")");
+        
+        document.getElementById("FCClink").setAttribute("href", data.url);
+
         document.getElementById("card1").style.backgroundImage = `url( ${logo})`;
         console.log(logo);
         console.dir(FCC_Stream);
