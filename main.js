@@ -5,12 +5,13 @@ const CHANNELS = ["freecodecamp", "aws", "kyleshevlin", "barbarousking"];
 (function() {
     let mainURL = "https://wind-bow.glitch.me/twitch-api/channels/";
 
-    $.getJSON(mainURL, function(data) {
+    $.getJSON(mainURL + CHANNELS[0], function(data) {
         FCC_Stream = data;
         let logo = data.profile_banner;
 
         $("#FCClink").attr("href", data.url);
-        $("#FCClogo").attr("src", logo);
+        // $("#FCClogo").attr("src", logo);
+        $(".card-body").css("background-image", "url(" + logo + ")");
         console.log(logo);
         console.dir(FCC_Stream);
     }); // end of .getJSON() function
