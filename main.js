@@ -6,16 +6,23 @@ const CHANNELS = [ "freecodecamp", "aws", "kyleshevlin", "barbarousking" ];
 	let mainURL = "https://wind-bow.glitch.me/twitch-api/channels/";
 
 	for ( var i = 0; i < CHANNELS.length; i++ ) { // cycle through the CHANNELS and make an API call for all of them
+		let channelData;
+		console.log( i );
 		$.getJSON( mainURL + CHANNELS[ i ], function( data ) {
 			console.dir( data );
-			console.log( i );
+			channelData = data;
+			
 			let logo = data.profile_banner;
 
-			// document.getElementById("link" + i).setAttribute("href", data.url);
-			// document.getElementById(`card${i}`).style.backgroundImage = `url( ${logo})`;
+			// render new box elements for each channel
 
 		} ); // end of .getJSON() function
-	}
+        console.log(channelData);
+        let cards = `<div class="cards">
+        <p>${channelData.display_name}</p>
+        <p>stuff</p>`;
+        document.querySelector("#showcase").append(cards);
+	} // end for...loop 
 
 
 	$.getJSON( mainURL + CHANNELS[ 0 ], function( data ) {
