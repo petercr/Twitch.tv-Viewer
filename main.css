@@ -22,3 +22,7 @@ i:hover {
 .card-body {
     color: #FFFFFF;
 }
+
+.cards {
+    background: pink;
+}

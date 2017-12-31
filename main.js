@@ -13,15 +13,17 @@ const CHANNELS = [ "freecodecamp", "aws", "kyleshevlin", "barbarousking" ];
 			channelData = data;
 
 			let logo = data.profile_banner;
+			let cards = `<div class="cards">
+        	<p>${data.name}</p>
+			<p>stuff</p>
+			</div>`;
+			document.getElementById( "showcase" ).innerHTML = cards;
 
 			// render new box elements for each channel
 
 		} ); // end of .getJSON() function
-        console.log(channelData);
-        let cards = `<div class="cards">
-        <p>${channelData.name}</p>
-        <p>stuff</p>`;
-        document.getElementById("showcase").innerHTML = cards;
+		console.log( channelData );
+
 	} // end for...loop
 
 
