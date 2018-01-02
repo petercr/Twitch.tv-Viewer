@@ -17,7 +17,7 @@ const CHANNELS = [ "freecodecamp", "aws", "kyleshevlin", "barbarousking" ];
         	<p>${data.name}</p>
 			<p>stuff</p>
 			</div>`;
-			document.getElementById( "showcase" ).innerHTML = cards;
+			$( "#showcase" ).append(cards);
 
 			// render new box elements for each channel
 
