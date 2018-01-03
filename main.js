@@ -21,15 +21,16 @@ const CHANNELS = [ "freecodecamp", "aws", "kyleshevlin", "barbarousking" ];
 
 			let logo = data.profile_banner;
 			let cards = `<div class="cards">
-        	<p>${data.name}</p>
-			<p>stuff</p>
+			<img src="${data.profile_banner}">
+			<p>${data.name}</p>
+
 			</div>`;
 			$( "#showcase" ).append(cards);
 
 			// render new box elements for each channel
 
 		} ); // end of .getJSON() function
-		
+
 
 	} // end for...loop
 
