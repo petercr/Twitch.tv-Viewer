@@ -10,12 +10,12 @@ let FCC_Stream, Noobs2_Stream;
 const CHANNELS = [ "freecodecamp", "aws", "kyleshevlin", "barbarousking" ];
 
 ( function() {
-	let mainURL = "https://wind-bow.glitch.me/twitch-api/channels/";
+	let mainURL = "https://wind-bow.glitch.me/twitch-api/";
 	var channelData;
 	for ( var i = 0; i < CHANNELS.length; i++ ) { // cycle through the CHANNELS and make an API call for all of them
 
 		console.log( i );
-		$.getJSON( mainURL + CHANNELS[ i ], function( data ) {
+		$.getJSON( mainURL + "channels/" + CHANNELS[ i ], function( data ) {
 			console.dir( data );
 			channelData = data;
 
@@ -29,12 +29,14 @@ const CHANNELS = [ "freecodecamp", "aws", "kyleshevlin", "barbarousking" ];
 			// render new box elements for each channel
 
 		} ); // end of .getJSON() function
-		console.log( channelData );
+		
 
 	} // end for...loop
 
 
-	// $.getJSON( mainURL + CHANNELS[ 0 ], function( data ) {
+	$.getJSON( mainURL + "streams/" +  CHANNELS[ 0 ], function( data ) {
+		console.log(data);
+	} );
 	// 	FCC_Stream = data;
 	// 	let logo = data.profile_banner;
 	//
