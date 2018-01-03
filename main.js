@@ -21,10 +21,12 @@ const CHANNELS = [ "freecodecamp", "aws", "kyleshevlin", "barbarousking" ];
 
 			let logo = data.profile_banner;
 			let cards = `<div class="cards">
-			<img src="${data.profile_banner}">
+			<img src="${data.profile_banner}" class="img-thumbnail">
+			<p>Status</p>
 			<p>${data.name}</p>
-
 			</div>`;
+
+			// add the next card to the end of #showcase
 			$( "#showcase" ).append(cards);
 
 			// render new box elements for each channel
