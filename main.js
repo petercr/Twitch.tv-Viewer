@@ -21,9 +21,9 @@ const CHANNELS = [ "freecodecamp", "aws", "kyleshevlin", "barbarousking" ];
 
 			let logo = data.profile_banner;
 			let cards = `<div class="cards">
-			<img src="${data.profile_banner}" class="img-thumbnail">
-			<p>Status</p>
-			<p>${data.name}</p>
+			<img src="${data.profile_banner}" class="rounded float-left">
+			<p class="ml-2 mr-2">  Status  </p>
+			<p>  ${data.name}  </p>
 			</div>`;
 
 			// add the next card to the end of #showcase
