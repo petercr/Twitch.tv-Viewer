@@ -21,7 +21,7 @@ const CHANNELS = [ "freecodecamp", "aws", "kyleshevlin", "barbarousking" ];
 
 			let logo = data.profile_banner;
 			let cards = `<div class="cards">
-			<img src="${data.profile_banner}" class="rounded float-left">
+			<img src="${data.profile_banner}" class="img-fluid>
 			<p class="ml-2 mr-2">  Status  </p>
 			<p>  ${data.name}  </p>
 			</div>`;
