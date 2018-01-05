@@ -16,6 +16,7 @@ const CHANNELS = [ "freecodecamp", "aws", "kyleshevlin", "barbarousking" ];
 		
 
 		$.getJSON( mainURL + "streams/" + CHANNELS[ i ], function( data ) {
+			console.dir( data )
 			if ( data.stream == null ) {
 				streamStatus = "Offline";
 			}
@@ -25,7 +26,7 @@ const CHANNELS = [ "freecodecamp", "aws", "kyleshevlin", "barbarousking" ];
 		} );
 		// console.log( i );
 		$.getJSON( mainURL + "channels/" + CHANNELS[ i ], function( data ) {
-			console.dir( data );
+			// console.dir( data );
 			channelData = data;
 
 			let logo = data.profile_banner;
