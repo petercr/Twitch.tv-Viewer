@@ -14,16 +14,16 @@ const CHANNELS = [ "freecodecamp", "aws", "kyleshevlin", "barbarousking" ];
 	var channelData;
 	for ( var i = 0; i < CHANNELS.length; i++ ) { // cycle through the CHANNELS and make an API call for all of them
 
-		console.log( i );
+		// console.log( i );
 		$.getJSON( mainURL + "channels/" + CHANNELS[ i ], function( data ) {
 			console.dir( data );
 			channelData = data;
 
 			let logo = data.profile_banner;
 			let cards = `<div class="cards">
-			<img src="${data.profile_banner}" class="img-fluid>
+			<img src="${data.profile_banner}" class="img-fluid">
 			<p class="ml-2 mr-2">  Status  </p>
-			<p>  ${data.name}  </p>
+			<p class="mr-2">  ${data.name}  </p>
 			</div>`;
 
 			// add the next card to the end of #showcase
@@ -37,8 +37,8 @@ const CHANNELS = [ "freecodecamp", "aws", "kyleshevlin", "barbarousking" ];
 	} // end for...loop
 
 
-	$.getJSON( mainURL + "streams/" +  CHANNELS[ 0 ], function( data ) {
-		console.log(data);
+	$.getJSON( mainURL + "streams/" +  CHANNELS[ 3 ], function( data ) {
+		console.log(data.stream.game);
 	} );
 	// 	FCC_Stream = data;
 	// 	let logo = data.profile_banner;
