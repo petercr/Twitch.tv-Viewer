@@ -6,17 +6,17 @@
 
 
 let FCC_Stream, Noobs2_Stream;
-
+let streamStatus;
 const CHANNELS = [ "freecodecamp", "aws", "kyleshevlin", "barbarousking" ];
 
 ( function() {
 	let mainURL = "https://wind-bow.glitch.me/twitch-api/";
 	var channelData;
 	for ( var i = 0; i < CHANNELS.length; i++ ) { // cycle through the CHANNELS and make an API call for all of them
-		var streamStatus;
+		
 
 		$.getJSON( mainURL + "streams/" + CHANNELS[ i ], function( data ) {
-			if ( data.stream.game == null ) {
+			if ( data.stream == null ) {
 				streamStatus = "Offline";
 			}
 			else {
