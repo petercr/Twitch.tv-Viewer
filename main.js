@@ -13,7 +13,16 @@ const CHANNELS = [ "freecodecamp", "aws", "kyleshevlin", "barbarousking" ];
 	let mainURL = "https://wind-bow.glitch.me/twitch-api/";
 	var channelData;
 	for ( var i = 0; i < CHANNELS.length; i++ ) { // cycle through the CHANNELS and make an API call for all of them
+		var streamStatus;
 
+		$.getJSON( mainURL + "streams/" + CHANNELS[ i ], function( data ) {
+			if ( data.stream.game == null ) {
+				streamStatus = "Offline";
+			}
+			else {
+				streamStatus = data.stream.game;
+			}
+		} );
 		// console.log( i );
 		$.getJSON( mainURL + "channels/" + CHANNELS[ i ], function( data ) {
 			console.dir( data );
@@ -22,7 +31,7 @@ const CHANNELS = [ "freecodecamp", "aws", "kyleshevlin", "barbarousking" ];
 			let logo = data.profile_banner;
 			let cards = `<div class="cards">
 			<img src="${data.profile_banner}" class="img-fluid">
-			<p class="ml-2 mr-2">  Status  </p>
+			<p class="ml-2 mr-2">  ${streamStatus}  </p>
 			<p class="mr-2">  ${data.name}  </p>
 			</div>`;
 
