@@ -15,15 +15,7 @@ const CHANNELS = [ "freecodecamp", "aws", "kyleshevlin", "barbarousking" ];
 	for ( var i = 0; i < CHANNELS.length; i++ ) { // cycle through the CHANNELS and make an API call for all of them
 		
 
-		$.getJSON( mainURL + "streams/" + CHANNELS[ i ], function( data ) {
-			console.dir( data )
-			if ( data.stream == null ) {
-				streamStatus = "Offline";
-			}
-			else {
-				streamStatus = data.stream.game;
-			}
-		} );
+		
 		// console.log( i );
 		$.getJSON( mainURL + "channels/" + CHANNELS[ i ], function( data ) {
 			// console.dir( data );
@@ -45,10 +37,21 @@ const CHANNELS = [ "freecodecamp", "aws", "kyleshevlin", "barbarousking" ];
 
 
 	} // end for...loop
+for ( let j = 0; j < CHANNELS.length; j++) {
+	$.getJSON( mainURL + "streams/" + CHANNELS[ i ], function( data ) {
+		console.dir( data )
+		if ( !data.stream == true ) {
+			streamStatus = "Offline";
+		}
+		else {
+			streamStatus = data.stream.game;
+		}
+	} ); // end second AJAX call to get the status of the live stream
+}
 
 
 	$.getJSON( mainURL + "streams/" +  CHANNELS[ 3 ], function( data ) {
-		console.log(data.stream.game);
+		console.log(!data.stream);
 	} );
 	// 	FCC_Stream = data;
 	// 	let logo = data.profile_banner;
