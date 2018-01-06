@@ -13,16 +13,17 @@ const CHANNELS = [ "freecodecamp", "aws", "kyleshevlin", "barbarousking" ];
 	let mainURL = "https://wind-bow.glitch.me/twitch-api/";
 	var channelData;
 	for ( var i = 0; i < CHANNELS.length; i++ ) { // cycle through the CHANNELS and make an API call for all of them
-		
 
-		
+
+
 		// console.log( i );
 		$.getJSON( mainURL + "channels/" + CHANNELS[ i ], function( data ) {
+			let idCount = CHANNELS[i];
 			// console.dir( data );
 			channelData = data;
 
 			let logo = data.profile_banner;
-			let cards = `<div class="cards">
+			let cards = `<div class="cards" id="${idCount}">
 			<img src="${data.profile_banner}" class="img-fluid">
 			<p class="ml-2 mr-2">  ${streamStatus}  </p>
 			<p class="mr-2">  ${data.name}  </p>
@@ -36,9 +37,11 @@ const CHANNELS = [ "freecodecamp", "aws", "kyleshevlin", "barbarousking" ];
 		} ); // end of .getJSON() function
 
 
-	} // end for...loop
+	} // end for...loop for first AJAX call
+
 for ( let j = 0; j < CHANNELS.length; j++) {
-	$.getJSON( mainURL + "streams/" + CHANNELS[ i ], function( data ) {
+	let idCount = CHANNELS[j];
+	$.getJSON( mainURL + "streams/" + CHANNELS[ j ], function( data ) {
 		console.dir( data )
 		if ( !data.stream == true ) {
 			streamStatus = "Offline";
@@ -46,13 +49,14 @@ for ( let j = 0; j < CHANNELS.length; j++) {
 		else {
 			streamStatus = data.stream.game;
 		}
+		// document.getElementById(idCount).className("status").innerHTML = streamStatus;
 	} ); // end second AJAX call to get the status of the live stream
 }
 
 
-	$.getJSON( mainURL + "streams/" +  CHANNELS[ 3 ], function( data ) {
-		console.log(!data.stream);
-	} );
+	// $.getJSON( mainURL + "streams/" +  CHANNELS[ 3 ], function( data ) {
+	// 	console.log(!data.stream);
+	// } );
 	// 	FCC_Stream = data;
 	// 	let logo = data.profile_banner;
 	//
