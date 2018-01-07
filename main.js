@@ -13,12 +13,12 @@ const CHANNELS = [ "freecodecamp", "aws", "kyleshevlin", "barbarousking" ];
 	let mainURL = "https://wind-bow.glitch.me/twitch-api/";
 	var channelData;
 	for ( var i = 0; i < CHANNELS.length; i++ ) { // cycle through the CHANNELS and make an API call for all of them
-
+		let idCount = CHANNELS[i]; // var to hold put the channel name into .card id
 
 
 		// console.log( i );
 		$.getJSON( mainURL + "channels/" + CHANNELS[ i ], function( data ) {
-			let idCount = CHANNELS[i];
+			
 			// console.dir( data );
 			channelData = data;
 
@@ -40,7 +40,7 @@ const CHANNELS = [ "freecodecamp", "aws", "kyleshevlin", "barbarousking" ];
 	} // end for...loop for first AJAX call
 
 for ( let j = 0; j < CHANNELS.length; j++) {
-	let idCount = CHANNELS[j];
+		let idCount = CHANNELS[j];
 	$.getJSON( mainURL + "streams/" + CHANNELS[ j ], function( data ) {
 		console.dir( data )
 		if ( !data.stream == true ) {
