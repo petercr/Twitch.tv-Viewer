@@ -18,19 +18,21 @@ const CHANNELS = [ "freecodecamp", "aws", "kyleshevlin", "barbarousking" ];
 
 		// console.log( i );
 		$.getJSON( mainURL + "channels/" + CHANNELS[ i ], function( data ) {
-			
+
 			// console.dir( data );
 			channelData = data;
 
-			let logo = data.profile_banner;
+
 			let cards = `<div class="cards" id="${idCount}">
 			<img src="${data.profile_banner}" class="img-fluid">
-			<p class="ml-2 mr-2">  ${streamStatus}  </p>
+			<p class="isOnline ml-2 mr-2"> Status:		${streamStatus}  </p>
 			<p class="mr-2">  ${data.name}  </p>
 			</div>`;
 
 			// add the next card to the end of #showcase
 			$( "#showcase" ).append(cards);
+
+			// add eventListener to each .card for a click to take them to the Twitch channel
 
 			// render new box elements for each channel
 
