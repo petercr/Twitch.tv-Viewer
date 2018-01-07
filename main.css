@@ -6,24 +6,11 @@ i:hover {
     color: black;
 }
 
-.card-img-top {
-    height: 10%;
-    width: auto;
-    z-index: 3;
-    position: fixed;
-}
-
-#FCClogo {
-    align-content: flex-end;
-    align-self: flex-end;
-    opacity: .5;
-}
-
-.card-body {
-    color: #FFFFFF;
-}
+/* Cards section below with styling  */
 
 .cards {
+    color: #FFFFFF;
+    font-size: 1.5em;
     background: pink;
     display: flex;
     justify-content: space-between;
@@ -37,4 +24,8 @@ i:hover {
      width: 50%;
      height: 100%;
 
+}
+
+.isOnline {
+     color: red;
 }
