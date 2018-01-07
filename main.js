@@ -44,7 +44,7 @@ const CHANNELS = [ "freecodecamp", "aws", "kyleshevlin", "barbarousking" ];
 for ( let j = 0; j < CHANNELS.length; j++) {
 		let idCount = CHANNELS[j];
 	$.getJSON( mainURL + "streams/" + CHANNELS[ j ], function( data ) {
-		console.dir( data )
+		console.dir( data );
 		if ( !data.stream == true ) {
 			streamStatus = "Offline";
 		}
