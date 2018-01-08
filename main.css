@@ -15,8 +15,9 @@ i:hover {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 20%;
+    height: 22.5%;
     width: 80%;
+    cursor: pointer;
 
 }
 
