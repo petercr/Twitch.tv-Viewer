@@ -21,7 +21,8 @@ const CHANNELS = [ "freecodecamp", "aws", "kyleshevlin", "barbarousking" ];
 
 			// console.dir( data );
 			channelData = data;
-
+			let channelURL = data.url;
+			console.log(channelURL);
 
 			let cards = `<div class="cards" id="${idCount}">
 			<img src="${data.profile_banner}" class="img-fluid">
@@ -34,7 +35,7 @@ const CHANNELS = [ "freecodecamp", "aws", "kyleshevlin", "barbarousking" ];
 
 			// add eventListener to each .card for a click to take them to the Twitch channel
 			document.getElementById( idCount ).addEventListener( "click", function() {
-				console.log( "it's clicking" );
+				window.open(channelURL);
 			} );
 
 			// render new box elements for each channel
