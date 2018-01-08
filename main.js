@@ -19,15 +19,16 @@ const CHANNELS = [ "freecodecamp", "aws", "kyleshevlin", "barbarousking" ];
 		// console.log( i );
 		$.getJSON( mainURL + "channels/" + CHANNELS[ i ], function( data ) {
 
-			// console.dir( data );
+			console.log(data);
 			channelData = data;
 			let channelURL = data.url;
-			console.log(channelURL);
+
 
 			let cards = `<div class="cards" id="${idCount}">
 			<img src="${data.profile_banner}" class="img-fluid">
-			<p class="isOnline ml-2 mr-2"> Status:		${streamStatus}  </p>
-			<p class="mr-2">  ${data.name}  </p>
+			<p> Status: </p>
+			<p class="isOnline  ">${streamStatus}  </p>
+			<p class="mr-2">  ${data.display_name}  </p>
 			</div>`;
 
 			// add the next card to the end of #showcase
@@ -48,7 +49,7 @@ const CHANNELS = [ "freecodecamp", "aws", "kyleshevlin", "barbarousking" ];
 	for ( let j = 0; j < CHANNELS.length; j++ ) {
 		let idCount = CHANNELS[ j ];
 		$.getJSON( mainURL + "streams/" + CHANNELS[ j ], function( data ) {
-			console.dir( data );
+			// console.dir( data );
 			if ( !data.stream == true ) {
 				streamStatus = "Offline";
 			} else {
