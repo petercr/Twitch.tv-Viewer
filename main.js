@@ -16,10 +16,9 @@ const CHANNELS = [ "freecodecamp", "aws", "kyleshevlin", "barbarousking" ];
 		let idCount = CHANNELS[ i ]; // var to hold put the channel name into .card id
 
 
-		// console.log( i );
 		$.getJSON( mainURL + "channels/" + CHANNELS[ i ], function( data ) {
 
-			console.log(data);
+			// console.log( data );
 			channelData = data;
 			let channelURL = data.url;
 
@@ -27,7 +26,7 @@ const CHANNELS = [ "freecodecamp", "aws", "kyleshevlin", "barbarousking" ];
 			let cards = `<div class="cards" id="${idCount}">
 			<img src="${data.profile_banner}" class="img-fluid">
 			<p>Status:</p>
-			<p class="isOnline">${streamStatus}  </p>
+			<p class="isOnline" id="status">${streamStatus}  </p>
 			<p class="mr-2">  ${data.display_name}  </p>
 			</div>`;
 
@@ -36,7 +35,7 @@ const CHANNELS = [ "freecodecamp", "aws", "kyleshevlin", "barbarousking" ];
 
 			// add eventListener to each .card for a click to take them to the Twitch channel
 			document.getElementById( idCount ).addEventListener( "click", function() {
-				window.open(channelURL);
+				window.open( channelURL );
 			} );
 
 			// render new box elements for each channel
@@ -49,16 +48,19 @@ const CHANNELS = [ "freecodecamp", "aws", "kyleshevlin", "barbarousking" ];
 	for ( let j = 0; j < CHANNELS.length; j++ ) {
 		let idCount = CHANNELS[ j ];
 		$.getJSON( mainURL + "streams/" + CHANNELS[ j ], function( data ) {
-			// console.dir( data );
+
+			console.dir( data );
 			if ( !data.stream == true ) {
 				streamStatus = "Offline";
+
+				// document.getElementById(idCount)
 			} else {
 				streamStatus = data.stream.game;
 			}
 
-		// document.getElementById(idCount).className("status").innerHTML = streamStatus;
+
 		} ); // end second AJAX call to get the status of the live stream
-	}
+	} // end of the for...loop that checks for stream status
 
 
 	// $.getJSON( mainURL + "streams/" +  CHANNELS[ 3 ], function( data ) {
