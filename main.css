@@ -6,6 +6,13 @@ i:hover {
     color: black;
 }
 
+nav li {
+     display: flex;
+     justify-content: flex-end;
+}
+
+
+
 /* Cards section below with styling  */
 
 .cards {
