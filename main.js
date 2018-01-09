@@ -18,7 +18,7 @@ const CHANNELS = [ "freecodecamp", "aws", "kyleshevlin", "barbarousking" ];
 
 		$.getJSON( mainURL + "channels/" + CHANNELS[ i ], function( data ) {
 
-			// console.log( data );
+			console.log( data );
 			channelData = data;
 			let channelURL = data.url;
 
@@ -49,13 +49,19 @@ const CHANNELS = [ "freecodecamp", "aws", "kyleshevlin", "barbarousking" ];
 		let idCount = CHANNELS[ j ];
 		$.getJSON( mainURL + "streams/" + CHANNELS[ j ], function( data ) {
 
-			console.dir( data );
+			// console.dir( data );
 			if ( !data.stream == true ) {
 				streamStatus = "Offline";
 
 				// document.getElementById(idCount)
 			} else {
 				streamStatus = data.stream.game;
+			}
+
+			if (streamStatus !== "Offline") {
+				$("#status").removeClass(".isOnline");
+				$("#status").addClass(".isOffline");
+				
 			}
 
 
