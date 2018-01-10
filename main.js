@@ -61,33 +61,11 @@ const CHANNELS = [ "freecodecamp", "aws", "kyleshevlin", "barbarousking" ];
 			if (streamStatus !== "Offline") {
 				$("#status").removeClass(".isOnline");
 				$("#status").addClass(".isOffline");
-				
+
 			}
 
 
 		} ); // end second AJAX call to get the status of the live stream
 	} // end of the for...loop that checks for stream status
 
-
-	// $.getJSON( mainURL + "streams/" +  CHANNELS[ 3 ], function( data ) {
-	// 	console.log(!data.stream);
-	// } );
-	// 	FCC_Stream = data;
-	// 	let logo = data.profile_banner;
-	//
-	//
-	// 	document.getElementById( "FCClink" ).setAttribute( "href", data.url );
-	//
-	// 	document.getElementById( "card1" ).style.backgroundImage = `url( ${logo})`;
-	// 	console.log( logo );
-	// 	console.dir( FCC_Stream );
-	// } ); // end of .getJSON() function
-
-	// fetch(mainURL, { method: "GET", mode: "no-cors" }).then(function(response) {
-	//         return response.json;
-	//     })
-	//     .then(function(data) {
-	//         console.dir(data);
-	//     });
-
-} )();
+} )(); // end of the main fucntion() self excecuting 
