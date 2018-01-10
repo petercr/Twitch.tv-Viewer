@@ -12,7 +12,7 @@ const CHANNELS = [ "freecodecamp", "aws", "kyleshevlin", "barbarousking" ];
 ( function() {
 	let mainURL = "https://wind-bow.glitch.me/twitch-api/";
 	var channelData;
-	for ( var i = 0; i < CHANNELS.length; i++ ) { // cycle through the CHANNELS and make an API call for all of them
+	for ( let i = 0; i < CHANNELS.length; i++ ) { // cycle through the CHANNELS and make an API call for all of them
 		let idCount = CHANNELS[ i ]; // var to hold put the channel name into .card id
 
 
