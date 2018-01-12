@@ -26,7 +26,7 @@ const CHANNELS = [ "freecodecamp", "aws", "kyleshevlin", "barbarousking" ];
 			let cards = `<div class="cards" id="${idCount}">
 			<img src="${data.profile_banner}" class="img-fluid">
 			<p>Status:</p>
-			<p class="isOnline" id="${i}">${streamStatus}  </p>
+			<p class="isOffline" id="${i}">${streamStatus}  </p>
 			<p class="mr-2">  ${data.display_name}  </p>
 			</div>`;
 
@@ -49,7 +49,7 @@ const CHANNELS = [ "freecodecamp", "aws", "kyleshevlin", "barbarousking" ];
 		let idCount = CHANNELS[ j ];
 		$.getJSON( mainURL + "streams/" + CHANNELS[ j ], function( data ) {
 
-			// console.dir( data );
+			console.dir( data );
 			if ( !data.stream == true ) {
 				streamStatus = "Offline";
 
@@ -59,8 +59,9 @@ const CHANNELS = [ "freecodecamp", "aws", "kyleshevlin", "barbarousking" ];
 			}
 
 			if (streamStatus !== "Offline") {
-				$("#status").removeClass(".isOnline");
-				$("#status").addClass(".isOffline");
+				// document.getElementById(j).classList.add(".isOnline" );
+				// $("#status").removeClass(".isOnline");
+				// $("#status").addClass(".isOffline");
 
 			}
 
