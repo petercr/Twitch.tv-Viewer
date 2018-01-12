@@ -35,7 +35,7 @@ nav li {
 }
 
 .isOnline {
-     color: green;
+     color: green; !important
 }
 
 .isOffline {
