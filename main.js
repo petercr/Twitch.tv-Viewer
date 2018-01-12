@@ -26,7 +26,7 @@ const CHANNELS = [ "freecodecamp", "aws", "kyleshevlin", "barbarousking" ];
 			let cards = `<div class="cards" id="${idCount}">
 			<img src="${data.profile_banner}" class="img-fluid">
 			<p>Status:</p>
-			<p class="isOnline" id="status">${streamStatus}  </p>
+			<p class="isOnline" id="${i}">${streamStatus}  </p>
 			<p class="mr-2">  ${data.display_name}  </p>
 			</div>`;
 
