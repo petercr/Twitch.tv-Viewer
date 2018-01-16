@@ -18,7 +18,7 @@ const CHANNELS = [ "freecodecamp", "aws", "kyleshevlin", "barbarousking" ];
 
 		$.getJSON( mainURL + "channels/" + CHANNELS[ i ], function( data ) {
 
-			console.log( data );
+			console.dir( data );
 			channelData = data;
 			let channelURL = data.url;
 
@@ -69,4 +69,4 @@ const CHANNELS = [ "freecodecamp", "aws", "kyleshevlin", "barbarousking" ];
 		} ); // end second AJAX call to get the status of the live stream
 	} // end of the for...loop that checks for stream status
 
-} )(); // end of the main fucntion() self excecuting 
+} )(); // end of the main fucntion() self excecuting
