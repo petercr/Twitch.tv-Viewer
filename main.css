@@ -22,15 +22,15 @@ nav li {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 20%;
-    width: 80%;
+    /* height: 20%;
+    width: 80%; */
     cursor: pointer;
 
 }
 
 .cards img {
-     width: 50%;
-     height: 100%;
+     width: 10%;
+     height: 10%;
 
 }
 
