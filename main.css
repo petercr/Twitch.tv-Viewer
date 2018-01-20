@@ -16,9 +16,13 @@ nav li {
 /* Cards section below with styling  */
 
 .cards {
+     margin-left: 5%;
+     margin-right: 5%;
+     padding-left: 10px;
+     padding-right: 10px;
     color: #FFFFFF;
     font-size: 1.25em;
-    background: pink;
+    background: gray;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -35,10 +39,6 @@ nav li {
 
 }
 
-.isOnline {
-     color: green !important;
-}
-
-.isOffline {
-     color: red;
+.status {
+     text-align: center;
 }
