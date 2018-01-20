@@ -39,6 +39,10 @@ nav li {
 
 }
 
+.cards p {
+  flex-basis: 20%;
+}
+
 .status {
      text-align: center;
      min-width: 30%;
