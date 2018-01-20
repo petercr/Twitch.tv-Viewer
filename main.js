@@ -15,49 +15,33 @@ const CHANNELS = [ "freecodecamp", "aws", "kyleshevlin", "barbarousking" ];
 
 	// commented out the first AJAX call to just get stream status
 
-	// for ( let i = 0; i < CHANNELS.length; i++ ) { // cycle through the CHANNELS and make an API call for all of them
-	// 	let idCount = CHANNELS[ i ]; // var to hold put the channel name into .card id
-	//
-	//
-	// 	$.getJSON( mainURL + "channels/" + CHANNELS[ i ], function( data ) {
-	//
-	// 		console.dir( data );
-	// 		channelData = data;
-	// 		let channelURL = data.url;
-	//
-	//
-	// 		let cards = `<div class="cards" id="${idCount}">
-	// 		<img src="${data.profile_banner}" class="img-fluid">
-	// 		<p>Status:</p>
-	// 		<p class="isOffline" id="${i}">${streamStatus}  </p>
-	// 		<p class="mr-2">  ${data.display_name}  </p>
-	// 		</div>`;
-	//
-	// 		// add the next card to the end of #showcase
-	// 		// $( "#showcase" ).append( cards );
-	//
-	// 		// add eventListener to each .card for a click to take them to the Twitch channel
-	// 		document.getElementById( idCount ).addEventListener( "click", function() {
-	// 			window.open( channelURL );
-	// 		} );
-	//
-	// 		// render new box elements for each channel
-	//
-	// 	} ); // end of .getJSON() function
-	//
-	//
-	// } // end for...loop for first AJAX call
+	for ( let i = 0; i < CHANNELS.length; i++ ) { // cycle through the CHANNELS and make an API call for all of them
+		let idCount = CHANNELS[ i ]; // var to hold put the channel name into .card id
+
+
+		$.getJSON( mainURL + "channels/" + CHANNELS[ i ], function( data ) {
+
+			console.dir( data );
+
+			var logoPictures = document.getElementsByTagName("img");
+			logoPictures[i + 1].src = data.logo;
+			console.log(logoPictures);
+
+		} ); // end of .getJSON() function
+
+
+	} // end for...loop for first AJAX call
 
 	for ( let j = 0; j < CHANNELS.length; j++ ) {
 		let idCount = CHANNELS[ j ];
 		$.getJSON( mainURL + "streams/" + CHANNELS[ j ], function( data ) {
 			let cardStatus = document.getElementsByClassName("status");
-			console.dir( data );
-			if ( !data.stream == true ) {
+			// console.dir( data );
+			if ( !data.stream == true ) { // if there is no stream then change color to red and text to Offline
 				cardStatus[j].style = "color: red"
 				cardStatus[j].innerText = "Offline"
 
-			} else {
+			} else {  // if there IS a stream then change color to green and text to Online
 				cardStatus[j].style = "color: green"
 				cardStatus[j].innerText = data.stream.game;
 			}
