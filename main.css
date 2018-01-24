@@ -1,3 +1,25 @@
+@import url('https://fonts.googleapis.com/css?family=Risque|Roboto+Slab');
+
+/* Media queries for medium and small screens */
+
+@media screen and (max-width: 768px) {
+          p {
+          font-size: 1.3rem !important;
+
+
+     }
+     .cards img {
+          min-height: 50px;
+          min-width: 50px;
+     }
+
+     p .name {
+          align-content:  flex-end;
+     }
+} /* end of media queries */
+
+/* Global page tag styling  */
+
 i {
     color: white;
 }
@@ -18,6 +40,8 @@ nav li {
 /* Cards section below with styling  */
 
 .cards {
+
+     font-family: 'Risque', cursive;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -28,9 +52,9 @@ nav li {
     margin-right: 5%;
     padding-left: 10px;
     padding-right: 10px;
-    color: #FFFFFF;
-    font-size: 1.25em;
-    background: gray;
+    color: #000000;
+    font-size: 1.45em;
+    background: #E8E8E8;
     border-radius: 20px;
 }
 
@@ -46,8 +70,16 @@ nav li {
 }
 
 .status {
+     font-family: 'Roboto Slab', serif;
      text-align: center;
      min-width: 30%;
      justify-content: center;
-     
+
+}
+
+ .name {
+     text-decoration: underline;
+     -webkit-flex-wrap: nowrap;
+     -ms-flex-wrap: nowrap;
+     flex-wrap: nowrap;
 }
